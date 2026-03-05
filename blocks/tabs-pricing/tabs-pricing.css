@@ -1,0 +1,365 @@
+/*
+ * Tabs Pricing Block
+ * Tab navigation with pricing plan cards
+ * Source: https://o2online.es/ - caja-tarifa-rf section
+ *
+ * Original computed styles at 1440px:
+ * - Section: bg #f8f8f8, padding 40px 0
+ * - Container: max-width 1350px, padding 0 15px
+ * - H2: 40px/500/48px, center, margin 0 0 24px
+ * - Tablist: flex, gap 8px, center, padding 0 0 40px
+ * - Selected tab: bg #0050ff, color #fff, 16px radius, shadow, 88px height
+ * - Unselected tab: bg #fff, color #0050ff, 16px radius, 88px height
+ * - Card: bg #fff, 40px radius, shadow, padding 24px, width 280px
+ * - Card H3: 20px/500/28px, margin 0 0 8px
+ * - Card P: 18px/400/24px, color #4a4a4a
+ * - Price: 56px/400/64px, color #000
+ * - CTA: bg #0050ff, 60px radius, padding 10px 24px, 16px font
+ */
+
+/* Section background and padding - override .section.light defaults */
+main .section.tabs-pricing-container {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+}
+
+.tabs-pricing-container .tabs-pricing-wrapper {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Section heading (outside block, in default-content-wrapper) */
+.tabs-pricing-container .default-content-wrapper h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 24px;
+  color: var(--text-color-dark);
+}
+
+/* Tab list container */
+.tabs-pricing .tabs-pricing-list {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 0 40px;
+}
+
+/* Tab buttons - pill style matching original */
+.tabs-pricing .tabs-pricing-list button {
+  flex: 0 0 auto;
+  min-width: 140px;
+  height: 88px;
+  margin: 0;
+  border: none;
+  border-radius: 16px;
+  padding: 16px 20px;
+  background-color: #fff;
+  color: var(--color-o2-blue);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  overflow: visible;
+  text-overflow: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tabs-pricing .tabs-pricing-list button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Selected tab - O2 blue with shadow */
+.tabs-pricing .tabs-pricing-list button[aria-selected='true'] {
+  background-color: var(--color-o2-blue);
+  color: #fff;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 15%);
+  cursor: default;
+}
+
+/* Tab icons row */
+.tabs-pricing .tabs-pricing-tab-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tabs-pricing .tabs-pricing-tab-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Tab label text */
+.tabs-pricing .tabs-pricing-tab-label {
+  font-size: 14.4px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+/* Tab panels */
+.tabs-pricing .tabs-pricing-panel {
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: visible;
+}
+
+.tabs-pricing .tabs-pricing-panel[aria-hidden='true'] {
+  display: none;
+}
+
+/* Cards grid layout */
+.tabs-pricing .tabs-pricing-cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Individual pricing card */
+.tabs-pricing .tabs-pricing-card {
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 10%);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 280px;
+}
+
+/* Card title - higher specificity than .tabs-pricing .tabs-pricing-card p */
+.tabs-pricing .tabs-pricing-card .tabs-pricing-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-color-dark);
+  margin: 0;
+}
+
+.tabs-pricing .tabs-pricing-card .tabs-pricing-title strong {
+  font-weight: 700;
+}
+
+/* Horizontal rule separators inside cards */
+.tabs-pricing .tabs-pricing-card hr {
+  border: none;
+  border-top: 1px solid rgb(0 0 0 / 10%);
+  margin: 16px 0;
+}
+
+/* Card paragraphs - spec text (must precede button p for specificity order) */
+.tabs-pricing .tabs-pricing-card p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.33;
+  color: #4a4a4a;
+  margin: 0 0 4px;
+}
+
+/* Reset margin on paragraphs inside tab buttons */
+.tabs-pricing .tabs-pricing-list button p {
+  margin: 0;
+}
+
+/* Entertainment label - extra top margin to separate from spec lines */
+.tabs-pricing .tabs-pricing-card .tabs-pricing-entertainment-label {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.33;
+  color: #4a4a4a;
+  margin: 12px 0 8px;
+}
+
+/* Entertainment logos container */
+.tabs-pricing .tabs-pricing-card .tabs-pricing-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px;
+}
+
+.tabs-pricing .tabs-pricing-card .tabs-pricing-logos img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Invert icons to white on selected (blue) tab */
+.tabs-pricing .tabs-pricing-list button[aria-selected='true'] .tabs-pricing-tab-icons img {
+  filter: brightness(0) invert(1);
+}
+
+/* Price display - inline flow matching original layout */
+.tabs-pricing .tabs-pricing-card .tabs-pricing-price {
+  margin: 0 0 12px;
+}
+
+.tabs-pricing .tabs-pricing-card .tabs-pricing-price-value {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.14;
+  color: var(--text-color-dark);
+}
+
+.tabs-pricing .tabs-pricing-card .tabs-pricing-price-detail {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-color-dark);
+  white-space: nowrap;
+}
+
+.tabs-pricing .tabs-pricing-card .tabs-pricing-price-detail strong {
+  font-weight: 400;
+}
+
+/* CTA button - higher specificity than .tabs-pricing .tabs-pricing-card p */
+.tabs-pricing .tabs-pricing-card .tabs-pricing-cta {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.tabs-pricing .tabs-pricing-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-o2-blue);
+  color: #fff;
+  border-radius: 60px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.tabs-pricing .tabs-pricing-cta a:hover {
+  background-color: var(--link-hover-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Additional lines banner - pill-shaped CTA below cards */
+.tabs-pricing-container > .default-content-wrapper:last-child {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+}
+
+.tabs-pricing-banner {
+  display: block;
+  position: relative;
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 25%);
+  padding: 16px 16px 16px 24px;
+  text-decoration: none;
+  overflow: visible;
+  max-width: 800px;
+  width: 100%;
+}
+
+.tabs-pricing-banner:hover {
+  text-decoration: none;
+}
+
+.tabs-pricing-banner-content {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding-right: 104px;
+}
+
+.tabs-pricing-banner-label {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.33;
+  color: #000;
+  white-space: nowrap;
+}
+
+.tabs-pricing-banner-prices {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.33;
+  color: var(--color-o2-blue);
+  white-space: nowrap;
+}
+
+.tabs-pricing-banner-price-amount {
+  color: #00008c;
+}
+
+.tabs-pricing-banner-img {
+  position: absolute;
+  top: -24px;
+  right: 0;
+  width: 104px;
+  height: 80px;
+  pointer-events: none;
+}
+
+/* Mobile adjustments */
+@media (width < 600px) {
+  .tabs-pricing .tabs-pricing-list {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 24px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tabs-pricing .tabs-pricing-list button {
+    font-size: 14px;
+    padding: 12px 16px;
+    height: auto;
+    min-width: 100px;
+  }
+
+  .tabs-pricing .tabs-pricing-tab-icons img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tabs-pricing .tabs-pricing-tab-label {
+    font-size: 12px;
+  }
+
+  .tabs-pricing .tabs-pricing-card {
+    flex: 1 1 100%;
+  }
+
+  .tabs-pricing-banner-content {
+    padding-right: 0;
+  }
+
+  .tabs-pricing-banner-img {
+    display: none;
+  }
+
+  .tabs-pricing-banner-label,
+  .tabs-pricing-banner-prices {
+    font-size: 16px;
+  }
+}
+
+@media (width >= 900px) {
+  .tabs-pricing-container .default-content-wrapper h2 {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+}

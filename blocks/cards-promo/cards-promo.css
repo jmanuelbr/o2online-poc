@@ -1,0 +1,134 @@
+/*
+ * Cards Promo Block
+ * Promotional cards with background images (carousel-style layout)
+ * Source: https://o2online.es/ - bloque_carrusel section
+ *
+ * Layout: text at TOP, image at BOTTOM (matching original site)
+ * Each card is a flex column; the body (text) has order: -1 to render first.
+ */
+
+/* Card grid - horizontal scroll on mobile, wrap on desktop */
+.cards-promo > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 16px;
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar (webkit) */
+.cards-promo > ul::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual promo cards */
+.cards-promo > ul > li {
+  flex: 0 0 280px;
+  min-height: 440px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  color: #fff;
+  scroll-snap-align: start;
+  border: none;
+}
+
+/* Card link wrapper — fills the entire card */
+.cards-promo .cards-promo-card-link {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: inherit;
+  text-decoration: none;
+}
+
+.cards-promo .cards-promo-card-link:hover {
+  text-decoration: none;
+}
+
+/* Card body - text area at the TOP of the card */
+.cards-promo .cards-promo-card-body {
+  order: -1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #fff;
+  z-index: 1;
+}
+
+.cards-promo .cards-promo-card-body p {
+  margin: 0;
+}
+
+.cards-promo .cards-promo-card-body p strong {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cards-promo .cards-promo-card-body p:not(:first-child) {
+  font-size: var(--body-font-size-s);
+  color: rgb(255 255 255 / 80%);
+  line-height: 1.4;
+}
+
+/* CTA text in promo cards ("Saber más") */
+.cards-promo .cards-promo-card-cta {
+  color: var(--color-o2-blue);
+  font-weight: 500;
+  font-size: var(--body-font-size-s);
+}
+
+/* Card image - fills remaining space at BOTTOM */
+.cards-promo .cards-promo-card-image {
+  line-height: 0;
+  flex: 1;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.cards-promo .cards-promo-card-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.cards-promo > ul > li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Tablet --- */
+@media (width >= 600px) {
+  .cards-promo > ul > li {
+    flex: 0 0 310px;
+    min-height: 453px;
+  }
+}
+
+/* --- Desktop --- */
+@media (width >= 900px) {
+  .cards-promo > ul {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+
+  .cards-promo > ul > li {
+    flex: 0 0 calc(25% - 12px);
+    min-width: 240px;
+  }
+}

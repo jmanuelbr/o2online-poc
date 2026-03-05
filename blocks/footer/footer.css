@@ -1,20 +1,134 @@
+/*
+ * Footer Block
+ * O2 Spain blue footer with 4-column link layout
+ * Source: https://o2online.es/ footer
+ */
+
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: var(--color-o2-blue);
+  color: #fff;
+  font-size: var(--body-font-size-s);
 }
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  max-width: 1350px;
+  padding: 50px 15px 0;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+/* ==========================================
+   Main links section (first section = 4 columns)
+   ========================================== */
+
+footer .footer .section:first-child .default-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+  padding: 20px 0 60px;
+}
+
+/* Column containers created by JS */
+footer .footer .footer-col {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+/* Headings */
+footer .footer h5 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+/* Link lists */
+footer .footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+footer .footer li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+footer .footer a:any-link {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+footer .footer a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* App store badge images */
+footer .footer .footer-col > p a picture,
+footer .footer .footer-col > p a img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* ==========================================
+   Arbitral section (second section)
+   ========================================== */
+
+footer .footer .section:nth-child(2) .default-content-wrapper {
+  border-top: 1px solid rgb(255 255 255 / 30%);
+  padding: 30px 0;
+}
+
+footer .footer .section:nth-child(2) img {
+  height: 40px;
+  width: auto;
+}
+
+/* ==========================================
+   Copyright section (third section)
+   ========================================== */
+
+footer .footer .section:last-child .default-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 30px 0 48px;
+  border-top: 1px solid rgb(255 255 255 / 30%);
+}
+
+footer .footer .section:last-child p {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: var(--body-font-size-s);
+  color: #fff;
+}
+
+footer .footer .section:last-child img {
+  height: 32px;
+  width: auto;
+}
+
+/* ==========================================
+   Desktop: 4-column layout
+   ========================================== */
+
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 50px 32px 0;
+  }
+
+  footer .footer .footer-col {
+    flex: 1 1 0;
   }
 }

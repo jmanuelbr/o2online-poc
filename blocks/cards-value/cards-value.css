@@ -1,0 +1,82 @@
+/*
+ * Cards Value Block
+ * Icon + title + description value proposition cards
+ * Source: https://o2online.es/ - bloque_cards section
+ * Used for "¿Por qué elegir O2?" and "Y con todas estas ventajas"
+ */
+
+/* Card grid */
+.cards-value > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* Individual value cards */
+.cards-value > ul > li {
+  background-color: #fff;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 15px 15px 30px;
+  border: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Card image/icon area */
+.cards-value .cards-value-card-image {
+  line-height: 0;
+  margin-bottom: 16px;
+}
+
+.cards-value > ul > li img {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+}
+
+/* Card body */
+.cards-value .cards-value-card-body {
+  margin: 0;
+  padding: 0;
+}
+
+.cards-value .cards-value-card-body h3 {
+  font-size: 22px;
+  font-weight: 500;
+  color: rgb(0 0 30);
+  margin-bottom: 12px;
+}
+
+.cards-value .cards-value-card-body p {
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  color: #575757;
+  line-height: 1.375;
+  margin-bottom: 8px;
+}
+
+/* Links in value cards */
+.cards-value .cards-value-card-body a {
+  color: var(--color-o2-blue);
+}
+
+/* Tablet: 2 columns */
+@media (width >= 600px) {
+  .cards-value > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3-4 columns depending on item count */
+@media (width >= 900px) {
+  .cards-value > ul {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}

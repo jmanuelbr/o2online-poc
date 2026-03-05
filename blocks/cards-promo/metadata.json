@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-promo",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-04T14:16:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://o2online.es/",
+    "originPage": "O2 Spain homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "promotional",
+    "imagePattern": "large",
+    "structure": "4 promotional cards with images and links"
+  },
+  "contentPattern": {
+    "structure": "image + title + text + link",
+    "buttonCount": 0,
+    "imageCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "promotional content grids",
+      "featured content with large images",
+      "editorial card layouts"
+    ],
+    "notSuitableFor": [
+      "icon-based feature cards",
+      "value proposition cards without images",
+      "text-only card grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-04T14:16:00.000Z"
+  }
+}

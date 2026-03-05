@@ -1,0 +1,121 @@
+/*
+ * Hero O2 Block
+ * Full-width hero with background image, white text overlay
+ * Source: https://o2online.es/ - cabecera section
+ *
+ * Original computed styles at 1440px:
+ * - Article: padding 140px 0, min-height 530px, bg-position 0% 0%
+ * - Container: max-width 1350px, margin 0 auto, padding 0 15px
+ * - Region: max-width 50% (col-lg-6), padding 0 15px
+ * - H1: 32px/500/40px, margin 0 0 8px
+ * - P: 56px/400/64px, margin 0 0 16px
+ */
+
+/* Remove section constraints for full-width hero */
+.hero-o2-container .hero-o2-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-o2 {
+  position: relative;
+  padding: 100px 0 40px;
+  min-height: 400px;
+}
+
+/* Background image positioning */
+.hero-o2 picture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+}
+
+.hero-o2 img {
+  object-fit: cover;
+  object-position: 0 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Content overlay container — combines .container + .col region from original */
+.hero-o2 .hero-o2-content {
+  max-width: 1350px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 16px;
+}
+
+/* Heading - smaller overline style (original: 32px/500 OnAir-Bold) */
+.hero-o2 h1 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 8px;
+}
+
+/* Override <strong> inside h1 to match original weight 500 */
+.hero-o2 h1 strong {
+  font-weight: 500;
+}
+
+/* Subtitle - large statement text (original: 56px/400 OnAir-Black) */
+.hero-o2 p {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.14;
+  margin: 0 0 16px;
+}
+
+/* Buttons in hero */
+.hero-o2 a.button {
+  background-color: #fff;
+  color: var(--color-o2-blue);
+  border-radius: var(--button-border-radius);
+}
+
+.hero-o2 a.button:hover {
+  background-color: #f0f0f0;
+  color: var(--color-o2-blue);
+}
+
+/* No-image variant - dark text on light bg */
+.hero-o2.no-image {
+  background-color: var(--light-color-alt);
+  min-height: auto;
+  padding: 80px 16px 40px;
+}
+
+.hero-o2.no-image h1,
+.hero-o2.no-image p {
+  color: var(--text-color);
+}
+
+@media (width >= 900px) {
+  .hero-o2 {
+    padding: 140px 0;
+    min-height: 530px;
+  }
+
+  /* Match original: container 15px + region 15px = 30px total padding */
+  .hero-o2 .hero-o2-content {
+    padding: 0 30px;
+  }
+
+  .hero-o2 h1 {
+    font-size: 32px;
+    line-height: 1.25;
+    max-width: 50%;
+  }
+
+  .hero-o2 p {
+    font-size: 56px;
+    line-height: 1.14;
+    max-width: 50%;
+  }
+
+  .hero-o2.no-image {
+    padding: 100px 32px 60px;
+  }
+}

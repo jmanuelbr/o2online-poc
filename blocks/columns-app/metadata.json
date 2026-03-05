@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-app",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-04T14:16:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://o2online.es/",
+    "originPage": "O2 Spain homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "spacious",
+    "purpose": "app-promotion",
+    "imagePattern": "large",
+    "structure": "text + features + badges | phone image"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + list + images | image",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "app promotion sections",
+      "product showcase with features",
+      "two-column text + image layouts"
+    ],
+    "notSuitableFor": [
+      "simple text columns",
+      "multi-column data comparisons",
+      "image gallery layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-04T14:16:00.000Z"
+  }
+}

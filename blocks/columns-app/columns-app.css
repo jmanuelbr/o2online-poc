@@ -1,0 +1,104 @@
+/*
+ * Columns App Block
+ * Two-column layout for app promotion
+ * Source: https://o2online.es/ - bloque_app_faldon section
+ * Designed to be used within a .section.gradient container
+ */
+
+.columns-app > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Image column */
+.columns-app > div > .columns-app-img-col {
+  order: 0;
+  text-align: center;
+}
+
+.columns-app > div > .columns-app-img-col img {
+  display: block;
+  max-width: 460px;
+  width: 100%;
+  height: auto;
+}
+
+/* Text column */
+.columns-app > div > div:not(.columns-app-img-col) {
+  order: 1;
+  color: #fff;
+}
+
+.columns-app > div > div:not(.columns-app-img-col) h2 {
+  font-size: var(--heading-font-size-xl);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.columns-app > div > div:not(.columns-app-img-col) p {
+  font-size: var(--body-font-size-m);
+  color: #fff;
+  line-height: 1.5;
+}
+
+.columns-app > div > div:not(.columns-app-img-col) ul {
+  color: #fff;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 24px;
+}
+
+.columns-app > div > div:not(.columns-app-img-col) li {
+  display: inline-block;
+  padding-left: 28px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  font-size: var(--body-font-size-m);
+  background: url("https://dlvt1u0vrr0ux.cloudfront.net/media/public/variant-white.svg") no-repeat 0 3px / 18px;
+}
+
+/* App store badge links — keep inline so badges sit side by side */
+.columns-app .columns-app-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.columns-app .columns-app-badges a {
+  display: inline-block;
+}
+
+/* App store badge images */
+.columns-app .columns-app-badges a img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (width >= 900px) {
+  .columns-app > div {
+    flex-direction: row;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .columns-app > div > div {
+    flex: 1;
+  }
+
+  /* Desktop: text left, image right */
+  .columns-app > div > div:not(.columns-app-img-col) {
+    order: 0;
+  }
+
+  .columns-app > div > .columns-app-img-col {
+    order: 1;
+  }
+
+  .columns-app > div > div:not(.columns-app-img-col) h2 {
+    font-size: 36px;
+  }
+}

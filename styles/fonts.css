@@ -1,36 +1,47 @@
-/* stylelint-disable max-line-length */
+/* stylelint-disable */
+
+/*
+ * O2 OnAir Font Family
+ *
+ * OnAir is O2's proprietary brand font. The font files should be placed
+ * in the /fonts/ directory. If the font files are not available, Arial
+ * will be used as the fallback (O2's own fallback choice).
+ *
+ * Font weights used on o2online.es:
+ * - OnAir-Light (300): Body text, navigation
+ * - OnAir-Regular (400): Buttons, UI elements
+ * - OnAir-Bold (700): H1, H3 headings
+ * - OnAir-Black (900): H2 headings, hero text
+ */
+
 @font-face {
-  font-family: roboto-condensed;
+  font-family: 'OnAir';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 300;
   font-display: swap;
-  src: url('../fonts/roboto-condensed-bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url('../fonts/OnAir-Light.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/roboto-bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/roboto-medium.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: roboto;
+  font-family: 'OnAir';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/roboto-regular.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url('../fonts/OnAir-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'OnAir';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/OnAir-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'OnAir';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../fonts/OnAir-Black.woff2') format('woff2');
 }

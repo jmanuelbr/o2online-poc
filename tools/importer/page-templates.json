@@ -1,0 +1,41 @@
+{
+  "templates": [
+    {
+      "name": "o2-homepage",
+      "urls": ["https://o2online.es/"],
+      "description": "O2 Spain homepage with hero, pricing tabs, promotional cards, value propositions, app promotion, advantages, and contact sections",
+      "blocks": [
+        {
+          "name": "hero-o2",
+          "instances": ["article.cabecera"]
+        },
+        {
+          "name": "tabs-pricing",
+          "instances": ["article.caja-tarifa-rf"]
+        },
+        {
+          "name": "cards-promo",
+          "instances": ["article.bloque_carrusel"]
+        },
+        {
+          "name": "cards-value",
+          "instances": ["article.bloque_cards"]
+        },
+        {
+          "name": "columns-app",
+          "instances": ["article#appmio2factura", "article.bloque_app_faldon"]
+        },
+        {
+          "name": "section-coverage",
+          "instances": ["article.faldon-cobertura-mini-dark"],
+          "section": "dark"
+        },
+        {
+          "name": "section-contact",
+          "instances": ["article.bloque_contacto_faldon"],
+          "section": "dark"
+        }
+      ]
+    }
+  ]
+}

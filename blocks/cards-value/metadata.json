@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-value",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-04T14:16:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://o2online.es/",
+    "originPage": "O2 Spain homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "value-proposition",
+    "imagePattern": "icon",
+    "structure": "icon + title + description cards"
+  },
+  "contentPattern": {
+    "structure": "icon + heading + paragraph",
+    "buttonCount": 0,
+    "imageCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "value proposition grids",
+      "feature highlight sections with icons",
+      "benefit/advantage card grids"
+    ],
+    "notSuitableFor": [
+      "promotional cards with large images",
+      "editorial content grids",
+      "product listing cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-04T14:16:00.000Z"
+  }
+}
