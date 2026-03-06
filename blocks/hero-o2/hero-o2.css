@@ -3,10 +3,10 @@
  * Full-width hero with background image, white text overlay
  * Source: https://o2online.es/ - cabecera section
  *
- * Original computed styles at 1440px:
- * - Article: padding 140px 0, min-height 530px, bg-position 0% 0%
- * - Container: max-width 1350px, margin 0 auto, padding 0 15px
- * - Region: max-width 50% (col-lg-6), padding 0 15px
+ * Original computed styles:
+ * - Desktop (1440px): padding 140px 0, min-height 530px, bg-position 0% 0%
+ * - Mobile (375px): padding 160px 0 40px, min-height 500px, bg-position 100% 0%
+ * - Container: max-width 1350px, margin 0 auto
  * - H1: 32px/500/40px, margin 0 0 8px
  * - P: 56px/400/64px, margin 0 0 16px
  */
@@ -19,25 +19,14 @@
 
 .hero-o2 {
   position: relative;
-  padding: 100px 0 40px;
-  min-height: 400px;
+  padding: 160px 0 40px;
+  min-height: 500px;
+  background-size: cover;
+  background-position: 100% 0%;
+  background-repeat: no-repeat;
 }
 
-/* Background image positioning */
-.hero-o2 picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-}
-
-.hero-o2 img {
-  object-fit: cover;
-  object-position: 0 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Content overlay container — combines .container + .col region from original */
+/* Content overlay container */
 .hero-o2 .hero-o2-content {
   max-width: 1350px;
   margin: 0 auto;
@@ -96,6 +85,7 @@
   .hero-o2 {
     padding: 140px 0;
     min-height: 530px;
+    background-position: 0% 0%;
   }
 
   /* Match original: container 15px + region 15px = 30px total padding */
