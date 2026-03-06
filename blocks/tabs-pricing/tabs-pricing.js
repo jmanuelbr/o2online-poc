@@ -22,6 +22,56 @@ function getTabIcons(label) {
   return icons;
 }
 
+/** Promo badge image URL */
+const BADGE_IMAGE = 'https://dlvt1u0vrr0ux.cloudfront.net/media/public/foto-apoyados-faldon.png';
+
+/**
+ * Detects a promo badge link (e.g. "Llévate un móvil desde 0€") and transforms it
+ * into an absolutely-positioned green banner at the top of the card.
+ * @param {HTMLElement} card The card element
+ */
+function decorateBadge(card) {
+  const firstChild = card.firstElementChild;
+  if (!firstChild) return;
+
+  const link = firstChild.tagName === 'P' ? firstChild.querySelector('a[href*="tarifas-dispositivos"]') : null;
+  if (!link) return;
+
+  const badge = document.createElement('a');
+  badge.className = 'tabs-pricing-badge';
+  badge.href = link.href;
+
+  const img = document.createElement('img');
+  img.className = 'tabs-pricing-badge-img';
+  img.src = BADGE_IMAGE;
+  img.alt = '';
+  img.setAttribute('role', 'presentation');
+  img.width = 70;
+  img.height = 56;
+  img.loading = 'lazy';
+  badge.append(img);
+
+  const text = document.createElement('span');
+  text.className = 'tabs-pricing-badge-text';
+  text.textContent = link.textContent.trim();
+  badge.append(text);
+
+  // Remove original paragraph, insert badge at top
+  firstChild.remove();
+  card.prepend(badge);
+
+  // The title paragraph lost its classification because the badge was first.
+  // Find the first <p> with a single <strong> child and mark it as title.
+  // The HR separator will be added by the post-processing loop in buildCards.
+  const nextP = badge.nextElementSibling;
+  if (nextP && nextP.tagName === 'P') {
+    const strong = nextP.querySelector(':scope > strong');
+    if (strong && nextP.childNodes.length === 1 && !nextP.textContent.includes('€')) {
+      nextP.classList.add('tabs-pricing-title');
+    }
+  }
+}
+
 /** Logo URLs for entertainment providers */
 const LOGO_MAP = {
   'movistar+': {
@@ -140,8 +190,11 @@ function buildCards(panel) {
     cardsContainer.append(currentCard);
   }
 
-  // Post-process each card: add separators, logos, price formatting
+  // Post-process each card: add separators, logos, price formatting, badges
   cardsContainer.querySelectorAll('.tabs-pricing-card').forEach((card) => {
+    // Detect and render promo badge before processing other elements
+    decorateBadge(card);
+
     const title = card.querySelector('.tabs-pricing-title');
     const price = card.querySelector('.tabs-pricing-price');
 
