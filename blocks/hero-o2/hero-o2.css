@@ -1,14 +1,16 @@
 /*
  * Hero O2 Block
- * Full-width hero with background image, white text overlay
+ * Full-width hero with CSS background image, white text overlay
  * Source: https://o2online.es/ - cabecera section
  *
  * Original computed styles:
- * - Desktop (1440px): padding 140px 0, min-height 530px, bg-position 0% 0%
+ * - Desktop (1366px): padding 140px 0, min-height 530px, bg-position 0% 0%
  * - Mobile (375px): padding 160px 0 40px, min-height 500px, bg-position 100% 0%
- * - Container: max-width 1350px, margin 0 auto
- * - H1: 32px/500/40px, margin 0 0 8px
- * - P: 56px/400/64px, margin 0 0 16px
+ * - Container: max-width 1350px, margin 0 auto, padding 0 15px
+ * - Region: max-width 50% (col-lg-6), padding 0 15px
+ * - H1: 32px/500/40px, margin 0 0 8px (OnAir-Bold)
+ * - P desktop: 56px/400/64px, margin 0 0 16px (OnAir-Black)
+ * - P mobile: 40px/400/48px, margin 0 0 16px (OnAir-Black)
  */
 
 /* Remove section constraints for full-width hero */
@@ -19,6 +21,7 @@
 
 .hero-o2 {
   position: relative;
+  box-sizing: border-box;
   padding: 160px 0 40px;
   min-height: 500px;
   background-size: cover;
@@ -34,12 +37,12 @@
   padding: 0 16px;
 }
 
-/* Heading - smaller overline style (original: 32px/500 OnAir-Bold) */
+/* Heading - smaller overline style (original: 24px/500 OnAir-Bold on mobile) */
 .hero-o2 h1 {
   color: #fff;
   font-size: 24px;
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.33;
   margin: 0 0 8px;
 }
 
@@ -48,12 +51,12 @@
   font-weight: 500;
 }
 
-/* Subtitle - large statement text (original: 56px/400 OnAir-Black) */
+/* Subtitle - large statement text (original: 40px/400/48px OnAir-Black on mobile) */
 .hero-o2 p {
   color: #fff;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 400;
-  line-height: 1.14;
+  line-height: 1.2;
   margin: 0 0 16px;
 }
 

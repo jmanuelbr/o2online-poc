@@ -6,13 +6,13 @@ export default function decorate(block) {
     return;
   }
 
-  // Extract the image URL from the picture/img element
+  // Extract image URL and set as CSS background-image
   const img = picture.querySelector('img');
   if (img) {
     block.style.backgroundImage = `url('${img.src}')`;
   }
 
-  // Remove the picture element — image is now a CSS background
+  // Remove picture element — image is now a CSS background
   picture.remove();
 
   // Collect remaining content (headings, paragraphs, buttons)
