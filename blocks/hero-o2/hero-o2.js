@@ -6,7 +6,13 @@ export default function decorate(block) {
     return;
   }
 
-  // Remove picture from row structure
+  // Extract image URL and set as CSS background-image
+  const img = picture.querySelector('img');
+  if (img) {
+    block.style.backgroundImage = `url('${img.src}')`;
+  }
+
+  // Remove picture element — image is now a CSS background
   picture.remove();
 
   // Collect remaining content (headings, paragraphs, buttons)
@@ -20,7 +26,6 @@ export default function decorate(block) {
   // Clear leftover row divs
   while (block.firstChild) block.firstChild.remove();
 
-  // Rebuild: picture (absolute background) + content overlay
-  block.append(picture);
+  // Rebuild: content overlay only (image is CSS background)
   block.append(content);
 }
