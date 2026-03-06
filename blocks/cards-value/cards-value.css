@@ -4,6 +4,9 @@
  * Source: https://o2online.es/ - bloque_cards section
  * Used for "¿Por qué elegir O2?" and "Y con todas estas ventajas"
  */
+.cards-value-wrapper {
+    padding-top: 1rem !important;
+}
 
 /* Section heading override — production uses 16px margin-bottom on H2 */
 .cards-value-container > .default-content-wrapper > h2 {
@@ -40,16 +43,25 @@
 }
 
 .cards-value > ul > li img {
-  width: 66px;
   height: 66px;
   object-fit: contain;
   aspect-ratio: 1 / 1;
+    width: 66px !important;
+    margin: 30px auto 0;
+}
+
+.cards-value .cards-value-card-body p strong {
+    font-family: OnAir-Black, Arial, sans-serif;
+}
+
+.cards-value .cards-value-card-body p strong {
+    font-family: OnAir-Black, Arial, sans-serif;
 }
 
 /* Card body */
 .cards-value .cards-value-card-body {
   margin: 0;
-  padding: 0;
+padding: 0 15px;
 }
 
 .cards-value .cards-value-card-body h3,

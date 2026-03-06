@@ -401,7 +401,7 @@ main > .section:first-of-type {
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color-alt);
-  padding: var(--section-padding-large);
+    padding: 90px;
 }
 
 main .section.highlight > .default-content-wrapper {
@@ -467,7 +467,8 @@ main .section.dark a.button.primary:hover {
 main .section.gradient {
   background: linear-gradient(to bottom, #00008c 0%, #0050ff 50%, #afd7ff 100%);
   color: #fff;
-  padding: 0 0 50px;
+  max-height: 373px;
+    align-items: flex-start;
 }
 
 main .section.gradient h1,

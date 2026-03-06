@@ -32,18 +32,18 @@ main .section.tabs-pricing-container {
 /* Section heading (outside block, in default-content-wrapper) */
 .tabs-pricing-container .default-content-wrapper h2 {
   text-align: center;
-  font-size: 28px;
+  font-size: 40px;
   font-family: OnAir-Black, Arial, sans-serif; /* H2 uses OnAir-Black */
   font-weight: 500;
   line-height: 1.14;
   margin: 0 0 24px;
-  color: rgb(0, 0, 0);
+  color: rgb(0 0 0);
 }
 
 /* Tab list container */
 .tabs-pricing .tabs-pricing-list {
   display: flex;
-  gap: 8px;
+  gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
   padding: 0 0 40px;
@@ -59,8 +59,8 @@ main .section.tabs-pricing-container {
   border-radius: 16px;
   padding: 16px 20px;
   background-color: #fff;
-  color: var(--color-o2-blue);
-  font-family: OnAir-Light, Arial, sans-serif; /* Buttons use OnAir-Light */
+  color: var(--text-color-dark);
+  font-family: OnAir-Bold, Arial, sans-serif; /* Buttons use OnAir-Light */
   font-size: 18px;
   font-weight: 400; /* OnAir-Light uses weight 400 */
   line-height: 1.4;
@@ -75,6 +75,7 @@ main .section.tabs-pricing-container {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 15%);
 }
 
 .tabs-pricing .tabs-pricing-list button:hover {
@@ -137,7 +138,7 @@ main .section.tabs-pricing-container {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  flex: 0 0 280px;
+  flex: 0 0 306px;
 }
 
 /* Card title - higher specificity than .tabs-pricing .tabs-pricing-card p */
@@ -146,12 +147,8 @@ main .section.tabs-pricing-container {
   font-size: 20px;
   font-weight: 500; /* OnAir-Bold uses weight 500 */
   line-height: 1.4;
-  color: rgb(0, 0, 0);
+  color: rgb(0 0 0);
   margin: 0;
-}
-
-.tabs-pricing .tabs-pricing-card .tabs-pricing-title strong {
-  font-weight: 700;
 }
 
 /* Horizontal rule separators inside cards */
@@ -159,6 +156,10 @@ main .section.tabs-pricing-container {
   border: none;
   border-top: 1px solid rgb(0 0 0 / 10%);
   margin: 16px 0;
+}
+
+.tabs-pricing .tabs-pricing-card p strong {
+    font-family: OnAir-Bold, Arial, sans-serif; /* Card text uses OnAir-Light */
 }
 
 /* Card paragraphs - spec text (must precede button p for specificity order) */
@@ -211,11 +212,11 @@ main .section.tabs-pricing-container {
 }
 
 .tabs-pricing .tabs-pricing-card .tabs-pricing-price-value {
-  font-family: OnAir-Black, Arial, sans-serif; /* Prices use OnAir-Black */
+  font-family: OnAir-Bold, Arial, sans-serif; /* Prices use OnAir-Black */
   font-size: 56px;
   font-weight: 400; /* OnAir-Black uses weight 400 */
   line-height: 1.14;
-  color: rgb(0, 0, 0);
+  color: rgb(0 0 0);
 }
 
 .tabs-pricing .tabs-pricing-card .tabs-pricing-price-detail {
@@ -335,6 +336,7 @@ main .section.tabs-pricing-container {
   line-height: 1.33;
   color: #000;
   white-space: nowrap;
+  font-family: OnAir-Bold, Arial, sans-serif;
 }
 
 .tabs-pricing-banner-prices {
@@ -343,6 +345,7 @@ main .section.tabs-pricing-container {
   line-height: 1.33;
   color: var(--color-o2-blue);
   white-space: nowrap;
+  font-family: OnAir-Bold, Arial, sans-serif;
 }
 
 .tabs-pricing-banner-price-amount {

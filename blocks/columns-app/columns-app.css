@@ -19,10 +19,8 @@
 }
 
 .columns-app > div > .columns-app-img-col img {
-  display: block;
-  max-width: 460px;
-  width: 100%;
-  height: auto;
+    position: relative;
+    top: -66px;
 }
 
 /* Text column — on mobile (image hidden), text is the only visible child */
