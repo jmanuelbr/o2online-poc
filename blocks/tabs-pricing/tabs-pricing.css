@@ -32,9 +32,9 @@ main .section.tabs-pricing-container {
 /* Section heading (outside block, in default-content-wrapper) */
 .tabs-pricing-container .default-content-wrapper h2 {
   text-align: center;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.14;
   margin: 0 0 24px;
   color: var(--text-color-dark);
 }
@@ -250,6 +250,45 @@ main .section.tabs-pricing-container {
   background-color: var(--link-hover-color);
   color: #fff;
   text-decoration: none;
+}
+
+/* Promo badge - green banner at top of card ("Llévate un móvil desde 0€") */
+.tabs-pricing .tabs-pricing-card:has(.tabs-pricing-badge) {
+  position: relative;
+  overflow: visible;
+  padding-top: 48px;
+}
+
+.tabs-pricing .tabs-pricing-badge {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(130 253 200);
+  border-radius: 16px 16px 0 0;
+  padding: 12px 0 12px 70px;
+  text-decoration: none;
+  overflow: visible;
+}
+
+.tabs-pricing .tabs-pricing-badge:hover {
+  text-decoration: none;
+}
+
+.tabs-pricing .tabs-pricing-badge-img {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 70px;
+  height: auto;
+}
+
+.tabs-pricing .tabs-pricing-badge-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.375;
+  color: #000;
 }
 
 /* Additional lines banner - pill-shaped CTA below cards */
