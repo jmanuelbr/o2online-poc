@@ -343,16 +343,28 @@ main .section.tabs-pricing-container {
     flex: 1 1 100%;
   }
 
+  .tabs-pricing-banner {
+    border-radius: 24px;
+    padding: 16px;
+  }
+
   .tabs-pricing-banner-content {
+    flex-wrap: wrap;
     padding-right: 0;
+    gap: 4px 12px;
   }
 
   .tabs-pricing-banner-img {
     display: none;
   }
 
-  .tabs-pricing-banner-label,
+  .tabs-pricing-banner-label {
+    white-space: normal;
+    font-size: 16px;
+  }
+
   .tabs-pricing-banner-prices {
+    white-space: normal;
     font-size: 16px;
   }
 }
