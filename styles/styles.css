@@ -110,11 +110,6 @@ header {
   height: var(--nav-height);
 }
 
-/* Push content down to account for fixed header */
-main {
-  padding-top: var(--nav-height);
-}
-
 header .header,
 footer .footer {
   visibility: hidden;
