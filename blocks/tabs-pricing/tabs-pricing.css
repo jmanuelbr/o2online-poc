@@ -33,10 +33,11 @@ main .section.tabs-pricing-container {
 .tabs-pricing-container .default-content-wrapper h2 {
   text-align: center;
   font-size: 28px;
+  font-family: OnAir-Black, Arial, sans-serif; /* H2 uses OnAir-Black */
   font-weight: 500;
   line-height: 1.14;
   margin: 0 0 24px;
-  color: var(--text-color-dark);
+  color: rgb(0, 0, 0);
 }
 
 /* Tab list container */
@@ -59,8 +60,9 @@ main .section.tabs-pricing-container {
   padding: 16px 20px;
   background-color: #fff;
   color: var(--color-o2-blue);
+  font-family: OnAir-Light, Arial, sans-serif; /* Buttons use OnAir-Light */
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400; /* OnAir-Light uses weight 400 */
   line-height: 1.4;
   text-align: center;
   white-space: nowrap;
@@ -140,10 +142,11 @@ main .section.tabs-pricing-container {
 
 /* Card title - higher specificity than .tabs-pricing .tabs-pricing-card p */
 .tabs-pricing .tabs-pricing-card .tabs-pricing-title {
+  font-family: OnAir-Bold, Arial, sans-serif; /* Card titles use OnAir-Bold */
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500; /* OnAir-Bold uses weight 500 */
   line-height: 1.4;
-  color: var(--text-color-dark);
+  color: rgb(0, 0, 0);
   margin: 0;
 }
 
@@ -160,6 +163,7 @@ main .section.tabs-pricing-container {
 
 /* Card paragraphs - spec text (must precede button p for specificity order) */
 .tabs-pricing .tabs-pricing-card p {
+  font-family: OnAir-Light, Arial, sans-serif; /* Card text uses OnAir-Light */
   font-size: 18px;
   font-weight: 400;
   line-height: 1.33;
@@ -207,10 +211,11 @@ main .section.tabs-pricing-container {
 }
 
 .tabs-pricing .tabs-pricing-card .tabs-pricing-price-value {
+  font-family: OnAir-Black, Arial, sans-serif; /* Prices use OnAir-Black */
   font-size: 56px;
-  font-weight: 400;
+  font-weight: 400; /* OnAir-Black uses weight 400 */
   line-height: 1.14;
-  color: var(--text-color-dark);
+  color: rgb(0, 0, 0);
 }
 
 .tabs-pricing .tabs-pricing-card .tabs-pricing-price-detail {
@@ -239,6 +244,7 @@ main .section.tabs-pricing-container {
   color: #fff;
   border-radius: 60px;
   padding: 10px 24px;
+  font-family: OnAir-Light, Arial, sans-serif; /* Buttons use OnAir-Light */
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;

@@ -7,23 +7,26 @@
  * in the /fonts/ directory. If the font files are not available, Arial
  * will be used as the fallback (O2's own fallback choice).
  *
- * Font weights used on o2online.es:
- * - OnAir-Light (300): Body text, navigation
- * - OnAir-Regular (400): Buttons, UI elements
- * - OnAir-Bold (700): H1, H3 headings
- * - OnAir-Black (900): H2 headings, hero text
+ * IMPORTANT: o2online.es uses separate font-family names for each weight,
+ * not a single family with different weights. This is replicated here.
+ *
+ * Font usage on o2online.es:
+ * - OnAir-Light: Body text, navigation, links, buttons (weight: 400)
+ * - OnAir-Regular: Some links and paragraphs (weight: 400-500)
+ * - OnAir-Bold: H1, H3 headings (weight: 500)
+ * - OnAir-Black: H2 headings, hero text (weight: 400-500)
  */
 
 @font-face {
-  font-family: 'OnAir';
+  font-family: 'OnAir-Light';
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-display: swap;
   src: url('../fonts/OnAir-Light.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'OnAir';
+  font-family: 'OnAir-Regular';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -31,17 +34,17 @@
 }
 
 @font-face {
-  font-family: 'OnAir';
+  font-family: 'OnAir-Bold';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-display: swap;
-  src: url('../fonts/OnAir-Bold.woff2') format('woff2');
+  src: url('../fonts/OnAir-Bold.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'OnAir';
+  font-family: 'OnAir-Black';
   font-style: normal;
-  font-weight: 900;
+  font-weight: 400;
   font-display: swap;
-  src: url('../fonts/OnAir-Black.woff2') format('woff2');
+  src: url('../fonts/OnAir-Black.woff') format('woff');
 }

@@ -2,9 +2,12 @@
 header .nav-wrapper {
   background-color: var(--color-o2-blue);
   width: 100%;
-  z-index: 2;
+  z-index: 1000; /* High z-index to stay above content */
   position: fixed;
+  top: 0;
+  left: 0;
   color: #fff;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%); /* Subtle shadow for elevation */
 }
 
 header nav {
@@ -34,7 +37,7 @@ header nav[aria-expanded='true'] {
 
 @media (width >= 900px) {
   header .nav-wrapper {
-    position: relative;
+    /* Keep position: fixed from mobile, don't override */
   }
 
   header nav {

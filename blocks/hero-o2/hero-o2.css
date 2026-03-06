@@ -39,11 +39,11 @@
 
 /* Heading - smaller overline style (original: 24px/500 OnAir-Bold on mobile) */
 .hero-o2 h1 {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.33;
-  margin: 0 0 8px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.33;
+    margin: 0 0 8px;
 }
 
 /* Override <strong> inside h1 to match original weight 500 */
@@ -54,10 +54,11 @@
 /* Subtitle - large statement text (original: 40px/400/48px OnAir-Black on mobile) */
 .hero-o2 p {
   color: #fff;
-  font-size: 40px;
   font-weight: 400;
   line-height: 1.2;
   margin: 0 0 16px;
+  font-family: "OnAir-Black";
+  font-size: 56px;
 }
 
 /* Buttons in hero */
