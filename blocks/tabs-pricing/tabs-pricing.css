@@ -296,6 +296,7 @@ main .section.tabs-pricing-container {
   font-weight: 400;
   line-height: 1.375;
   color: #000;
+  font-family: OnAir-Bold, Arial, sans-serif;
 }
 
 /* Additional lines banner - pill-shaped CTA below cards */
