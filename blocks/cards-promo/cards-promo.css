@@ -3,32 +3,50 @@
  * Promotional cards with background images (carousel-style layout)
  * Source: https://o2online.es/ - bloque_carrusel section
  *
- * Layout: text at TOP, image at BOTTOM (matching original site)
- * Each card is a flex column; the body (text) has order: -1 to render first.
+ * Original computed styles at 1366px:
+ * - Card: 310px wide, 453px tall, 16px radius, overflow visible
+ * - Card body: 20px padding
+ * - Title label (h3): 20px/500/24px - color varies per card
+ * - Main text (p.card-text): 28px/400/34px
+ * - CTA ("Saber más"): 18px/400 - color varies per card
+ * - Dark cards: bg black, white text
+ * - Light cards: gradient bg image, dark text
+ * - Image cards: card picture as background, text overlay
  */
 
-/* Card grid - horizontal scroll on mobile, wrap on desktop */
+/* Section heading and subtitle (in default-content-wrapper above block) */
+main > .section.cards-promo-container {
+  padding: 50px 0;
+}
+
+.cards-promo-container > .default-content-wrapper {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.cards-promo-container > .default-content-wrapper > h2 {
+  margin-bottom: 20px;
+}
+
+.cards-promo-container > .default-content-wrapper > p {
+  font-size: 20px;
+  color: #575757;
+  margin-bottom: 50px;
+}
+
+/* Card grid - stacked on mobile, wrap on desktop */
 .cards-promo > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 16px;
-  scrollbar-width: none;
-}
-
-/* Hide scrollbar (webkit) */
-.cards-promo > ul::-webkit-scrollbar {
-  display: none;
 }
 
 /* Individual promo cards */
 .cards-promo > ul > li {
-  flex: 0 0 280px;
+  flex: 1 1 100%;
   min-height: 440px;
   border-radius: 16px;
   overflow: hidden;
@@ -44,6 +62,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: 100%;
   color: inherit;
   text-decoration: none;
 }
@@ -59,7 +78,6 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  color: #fff;
   z-index: 1;
 }
 
@@ -67,25 +85,31 @@
   margin: 0;
 }
 
-.cards-promo .cards-promo-card-body p strong {
+/* ===== DARK THEME (default — La Liga, etc.) ===== */
+
+/* Title label: small colored text at top */
+.cards-promo .cards-promo-card-body p:first-child strong {
   font-size: 20px;
-  font-weight: 700;
-  line-height: 1.3;
+  font-weight: 500;
+  line-height: 1.2;
   display: block;
   margin-bottom: 4px;
 }
 
-.cards-promo .cards-promo-card-body p:not(:first-child) {
-  font-size: var(--body-font-size-s);
-  color: rgb(255 255 255 / 80%);
-  line-height: 1.4;
+/* Main text: large white text below title */
+.cards-promo .cards-promo-card-body p:not(:first-child, :last-child) {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.21;
+  color: #fff;
 }
 
-/* CTA text in promo cards ("Saber más") */
+/* CTA text ("Saber más") */
 .cards-promo .cards-promo-card-cta {
-  color: var(--color-o2-blue);
-  font-weight: 500;
-  font-size: var(--body-font-size-s);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.33;
+  color: #fff;
 }
 
 /* Card image - fills remaining space at BOTTOM */
@@ -109,11 +133,101 @@
   display: block;
 }
 
-/* --- Tablet --- */
+/* ===== LIGHT THEME (gradient cards — Samsung, eSIM) ===== */
+
+.cards-promo > ul > li[data-theme="light"] {
+  background-color: #e0d8ec;
+  color: #000;
+}
+
+/* Light cards: reorder — subtitle (pills) first, then main title, then CTA */
+.cards-promo li[data-theme="light"] .cards-promo-card-body p:first-child {
+  order: 1;
+}
+
+.cards-promo li[data-theme="light"] .cards-promo-card-body p:nth-child(2) {
+  order: 0;
+}
+
+.cards-promo li[data-theme="light"] .cards-promo-card-body p:last-child {
+  order: 2;
+}
+
+/* Light theme: title is the MAIN large text */
+.cards-promo li[data-theme="light"] .cards-promo-card-body p:first-child strong {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.21;
+  color: #000;
+}
+
+/* Light theme: subtitle is the small pill-style label at top */
+.cards-promo li[data-theme="light"] .cards-promo-card-body p:not(:first-child, :last-child) {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.375;
+  color: #000;
+}
+
+/* Light theme: CTA dark color */
+.cards-promo li[data-theme="light"] .cards-promo-card-cta {
+  color: #3c3c56;
+}
+
+/* ===== IMAGE THEME (Goya — card picture as full background) ===== */
+
+.cards-promo > ul > li[data-theme="image"] {
+  background-color: #000;
+  background-position: center;
+}
+
+/* Image theme: text overlays the background */
+.cards-promo li[data-theme="image"] .cards-promo-card-body {
+  flex: 1;
+}
+
+/* Image theme: no separate main text paragraph, keep label white */
+.cards-promo li[data-theme="image"] .cards-promo-card-body p:not(:first-child, :last-child) {
+  font-size: 18px;
+  color: #fff;
+}
+
+/* ===== PER-VARIANT LABEL AND CTA COLORS ===== */
+
+/* La Liga: title label in red */
+.cards-promo li[data-variant="laliga"] .cards-promo-card-body p:first-child strong {
+  color: rgb(253 80 74);
+}
+
+/* Goya: title label in yellowish */
+.cards-promo li[data-variant="goya"] .cards-promo-card-body p:first-child strong {
+  color: rgb(245 243 191);
+}
+
+/* eSIM: CTA in purple */
+.cards-promo li[data-variant="esim"] .cards-promo-card-cta {
+  color: #a73dff;
+}
+
+/* --- Tablet: horizontal scroll carousel --- */
 @media (width >= 600px) {
+  .cards-promo > ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 16px;
+    scrollbar-width: none;
+  }
+
+  .cards-promo > ul::-webkit-scrollbar {
+    display: none;
+  }
+
   .cards-promo > ul > li {
     flex: 0 0 310px;
     min-height: 453px;
+    scroll-snap-align: start;
   }
 }
 

@@ -11,8 +11,9 @@
   align-items: center;
 }
 
-/* Image column */
+/* Image column - hidden on mobile, visible on tablet+ */
 .columns-app > div > .columns-app-img-col {
+  display: none;
   order: 0;
   text-align: center;
 }
@@ -24,9 +25,9 @@
   height: auto;
 }
 
-/* Text column */
+/* Text column — on mobile (image hidden), text is the only visible child */
 .columns-app > div > div:not(.columns-app-img-col) {
-  order: 1;
+  order: 0;
   color: #fff;
 }
 
@@ -76,6 +77,12 @@
   height: 48px;
   width: auto;
   object-fit: contain;
+}
+
+@media (width >= 600px) {
+  .columns-app > div > .columns-app-img-col {
+    display: block;
+  }
 }
 
 @media (width >= 900px) {
